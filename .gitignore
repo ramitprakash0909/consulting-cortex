@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# env / secrets - NEVER commit these
+.env
+.env.local
+.env.*.local
+*.key
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# temp / build junk
+*.log
+*.tmp
+_zip.ps1

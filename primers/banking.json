@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "slug": "banking",
+    "industry": "Banking",
+    "sector": "Financial Services",
+    "subSegments": ["Retail / Consumer banking", "Corporate & Wholesale banking", "SME / Business banking", "Treasury & Markets"],
+    "lastUpdated": "2026-06-14",
+    "perishableFields": ["aiPenetration", "benchmarks", "indiaLandscape", "currentState"]
+  },
+
+  "essence": [
+    "Banks earn on the spread: raise money cheap (deposits), lend it dearer (loans) - net interest margin is the engine, fee income the topping.",
+    "It's a leveraged, trust-based business: a thin sliver of equity supports a balance sheet many times its size, so risk management decides who survives.",
+    "Cheap deposits - especially current/savings (CASA) - are the scarce raw material; whoever gathers low-cost, sticky deposits wins.",
+    "Heavily regulated on capital, liquidity and provisioning - the regulator (RBI) is effectively a co-pilot.",
+    "The credit cycle is everything: lend aggressively at the top and you pay for it through bad loans at the bottom."
+  ],
+
+  "definition": {
+    "oneLiner": "Institutions that take deposits and extend credit, intermediating between savers and borrowers while running the payments and savings system.",
+    "jobToBeDone": "Keep money safe, move it, and put it to work - letting people and businesses save, borrow, pay, and manage financial risk."
+  },
+
+  "valueChain": {
+    "stages": [
+      "Deposit gathering (CASA + term deposits)",
+      "Funding & treasury (manage cost of funds, liquidity)",
+      "Credit underwriting (assess & price risk)",
+      "Lending & disbursal (retail, corporate, SME)",
+      "Servicing & collections (monitor, recover)",
+      "Cross-sell & fee services (cards, wealth, insurance, payments)"
+    ],
+    "profitPools": "Profit pools concentrate in low-cost-deposit franchises and high-yield retail lending (cards, personal, vehicle loans); corporate lending is thin-margin and competitive, while fee/transaction banking and wealth are prized for capital-light returns.",
+    "powerShift": "Value is migrating from balance-sheet lending -> payments & transaction banking -> embedded finance & data-driven distribution, as fintechs and UPI commoditise the rails."
+  },
+
+  "businessModels": {
+    "primaryArchetypes": ["Spread / intermediation (asset-based balance sheet)", "Fee & transaction (capital-light services)"],
+    "variants": [
+      "Universal bank (retail + corporate + treasury under one roof)",
+      "Retail-led private bank (high CASA, cards, mortgages)",
+      "Public-sector bank (scale, priority-sector mandate, government ownership)",
+      "Small-finance / niche bank (inclusion, higher-yield microlending)"
+    ]
+  },
+
+  "unitEconomics": {
+    "unitOfRevenue": "Net interest income per rupee of assets, plus fee income",
+    "revenueDrivers": "Assets x Net Interest Margin. NIM widens with cheaper deposits (CASA), better loan pricing, and a higher-yield retail mix; fee income adds a capital-light layer.",
+    "keyKPIs": [
+      "NIM - net interest margin",
+      "CASA ratio - share of low-cost current/savings deposits",
+      "Cost-to-income ratio",
+      "GNPA / NNPA - gross / net non-performing assets",
+      "Credit cost - provisions as % of loans",
+      "ROA & ROE",
+      "Capital adequacy (CRAR / CET1)",
+      "Credit-deposit ratio"
+    ]
+  },
+
+  "costStructure": {
+    "shape": "Two cost layers: operating costs (branches, staff, tech) and credit costs (loan-loss provisions). Operating leverage is real, but credit losses are the swing factor that can wipe out a year's profit.",
+    "majorPools": ["Interest expense on deposits & borrowings (cost of funds)", "Loan-loss provisions (credit cost)", "Employee costs", "Branch & technology / IT", "Regulatory & compliance"],
+    "leverage": "A high fixed operating base means each incremental low-risk loan or deposit adds strong marginal profit - until the credit cycle turns and provisions surge."
+  },
+
+  "competitionAndMoats": {
+    "basisOfCompetition": ["Cost of deposits (CASA franchise)", "Distribution & brand trust", "Underwriting quality", "Digital experience", "Relationship & cross-sell"],
+    "moats": [
+      "Low-cost deposit franchise (sticky CASA - the deepest moat)",
+      "Trust & brand (safety of money)",
+      "Scale & network (branches + digital)",
+      "Switching costs (salary accounts, EMIs, auto-debits)",
+      "Regulatory licence (hard to obtain)"
+    ],
+    "concentration": "Moderately concentrated: a handful of large private banks plus dominant public-sector banks, with a long tail of regional, cooperative, small-finance and payment banks."
+  },
+
+  "structuralForces": {
+    "regulation": "Very heavy - RBI sets capital (Basel III), liquidity (LCR), reserves (CRR/SLR), priority-sector lending and provisioning norms. Regulatory action is the single biggest swing factor.",
+    "cyclicality": "Strongly tied to the credit and interest-rate cycles: NIMs move with rates, bad loans spike in downturns - decisions made at the top of the cycle are paid for at the bottom.",
+    "substitution": "Fintechs, NBFCs, UPI and capital markets disintermediate parts of the chain - payments, lending and savings - pushing banks toward being regulated balance sheets behind others' front-ends.",
+    "supplierBuyerPower": "Depositors (suppliers of funds) gain power as rates rise and switching gets easier; large corporate borrowers command fine pricing; core-banking/tech vendors hold moderate power."
+  },
+
+  "aiPenetration": {
+    "maturity": "Medium-to-high - banks are among the most active enterprise AI adopters in fraud, credit and service, though legacy cores slow deployment.",
+    "keyUseCases": [
+      "Credit underwriting & alternative-data scoring",
+      "Fraud detection & AML / transaction monitoring",
+      "Customer service chatbots & call-centre automation (large cost pool)",
+      "Collections prioritisation & early-warning systems",
+      "Personalised cross-sell / next-best-offer",
+      "Document processing & KYC automation"
+    ],
+    "valueChainImpact": "Biggest near-term value in credit decisioning (better risk pricing), operations/servicing (cost-to-serve) and fraud prevention; longer-term, AI-native distribution and hyper-personalised products reshape the front end.",
+    "opportunities": ["Lower cost-to-serve and underwrite", "Expand credit to thin-file customers via alternative data", "Real-time fraud reduction"],
+    "threatsDisruption": ["Fintech / AI-native lenders with lower cost structures", "Model risk, bias and regulatory scrutiny of AI decisions", "Erosion of the customer relationship if banks become back-end utilities"],
+    "note": "FAST-MOVING - refresh frequently."
+  },
+
+  "benchmarks": {
+    "ranges": [
+      "NIM: ~3-4% (Indian banks); lower for wholesale-heavy banks",
+      "CASA ratio: ~40-50% for strong retail banks",
+      "Cost-to-income: ~40-50% (lower is better)",
+      "GNPA: ~2-4% post clean-up; stressed banks higher",
+      "ROA: ~1.5-2% (top private banks), ~0.5-1% (PSUs)",
+      "ROE: ~15-18% (top private banks)",
+      "Capital adequacy (CRAR): >11.5% regulatory minimum; banks run ~15-18%"
+    ],
+    "note": "DIRECTIONAL - rules of thumb, not audited figures. Verify before quoting."
+  },
+
+  "valueLevers": [
+    "Lower cost of funds (grow CASA, sticky deposits)",
+    "Improve risk-adjusted lending mix (higher-yield retail, control credit cost)",
+    "Grow fee & transaction income (capital-light)",
+    "Cut cost-to-income (digital, branch productivity, AI ops)",
+    "Optimise capital allocation & risk-weighted-asset efficiency",
+    "Cross-sell & deepen relationships (raise revenue per customer)"
+  ],
+
+  "keyTerms": {
+    "NIM": "Net Interest Margin - the spread between interest earned on assets and paid on funds, per rupee of assets.",
+    "CASA": "Current Account / Savings Account - low-cost deposits; a high CASA ratio means cheaper funding.",
+    "NPA": "Non-Performing Asset - a loan where the borrower has stopped paying; high NPAs signal bad lending.",
+    "Provisioning": "Money set aside against expected loan losses; it hits profit when credit goes bad.",
+    "CRAR": "Capital to Risk-weighted Assets Ratio - the regulatory cushion of capital against risky assets.",
+    "Cost of funds": "The average interest rate a bank pays to raise deposits and borrowings.",
+    "Cost-to-income": "Operating costs as a share of income; a core efficiency measure.",
+    "Priority-sector lending": "RBI-mandated share of lending to agriculture, MSMEs and weaker sections.",
+    "CRR / SLR": "Cash Reserve Ratio / Statutory Liquidity Ratio - portions of deposits parked with RBI / in government securities."
+  },
+
+  "commonCaseTypes": [
+    "NIM / margin improvement",
+    "Deposit (CASA) growth strategy",
+    "Asset-quality clean-up & credit-cost reduction",
+    "Cost-to-income / operating-efficiency transformation",
+    "Digital banking & fintech response",
+    "Retail vs corporate portfolio rebalancing",
+    "M&A / consolidation (especially PSU mergers)",
+    "Capital raising & balance-sheet optimisation"
+  ],
+
+  "firstLookDiagnostics": {
+    "questionsToAskFirst": [
+      "Is the issue margin (NIM) or volume (loan/deposit growth)?",
+      "What's the CASA ratio and the trend in deposit costs?",
+      "How healthy is asset quality (GNPA, slippages, credit cost)?",
+      "Retail vs corporate mix - and how is it shifting?",
+      "Where are we in the rate and credit cycle?",
+      "Is capital adequate to fund growth?"
+    ],
+    "metricsToPullFirst": ["NIM", "CASA ratio", "GNPA & credit cost", "Cost-to-income", "ROA / ROE", "Capital adequacy (CRAR)"],
+    "rookieTraps": [
+      "Chasing loan growth while ignoring credit quality (growth that turns into NPAs)",
+      "Reading reported profit without checking provisioning adequacy",
+      "Ignoring the rate cycle when judging NIM",
+      "Treating all deposits as equal - cost and stickiness vary hugely"
+    ]
+  },
+
+  "whatsUniqueHere": "Banking is the business of confidence and leverage: a thin sliver of equity supports a balance sheet many times its size, so trust is the product and risk management is the strategy. Money is a commodity, yet the cost and stickiness of deposits, and the discipline of underwriting, separate the great franchises from the fragile ones - and the regulator sits permanently in the room.",
+
+  "indiaLandscape": {
+    "marketStructure": "A three-tier system: large public-sector banks (led by SBI) still hold the biggest share; a strong cluster of private banks (HDFC Bank, ICICI, Axis, Kotak) dominates profitability; plus small-finance, payment, cooperative and regional rural banks. NBFCs and fintechs sit alongside as fast-growing challengers.",
+    "majorPlayers": ["State Bank of India (SBI)", "HDFC Bank", "ICICI Bank", "Axis Bank", "Kotak Mahindra Bank", "Punjab National Bank", "Bank of Baroda"],
+    "regulatorsAndPolicy": ["RBI (regulator & monetary policy)", "Basel III capital norms", "Priority-sector lending rules", "Deposit insurance (DICGC)", "IBC / bankruptcy framework for recoveries"],
+    "policyTailwinds": ["JAM trinity (Jan Dhan-Aadhaar-Mobile) & financial inclusion", "UPI / digital public infrastructure", "Formalisation & rising credit penetration", "Account Aggregator framework for data-sharing"],
+    "demandDrivers": ["Under-penetrated credit (low credit-to-GDP)", "Rising incomes & retail credit appetite", "MSME formalisation", "Digital-first young population"],
+    "structuralChallenges": ["Legacy PSU asset-quality & efficiency gaps", "Deposit mobilisation getting harder (competition for savings)", "Thin financial-inclusion economics in rural areas", "Cyber & fraud risk as digital scales"],
+    "note": "Semi-perishable - players & policy specifics refresh periodically."
+  },
+
+  "crossIndustryLinks": {
+    "similarTo": ["Insurance - regulated, balance-sheet, risk-priced, long-tail liabilities", "Telecom - scale, distribution, regulated, infrastructure-like"],
+    "relatedPrimers": ["insurance", "fintech-payments", "asset-management"],
+    "relevantFrameworks": ["unit-economics", "porters-five-forces", "due-diligence-deep-dive"]
+  },
+
+  "currentState": {
+    "asOf": "2026-06-14",
+    "note": "PERISHABLE - refresh via research before quoting. Figures approximate.",
+    "marketStructure": "India: SBI the largest by assets; HDFC Bank the largest private bank (enlarged after the HDFC Ltd merger); ICICI, Axis, Kotak strong private players; PSU banks consolidated and much healthier after the NPA clean-up. Credit growth has run ahead of deposit growth, making low-cost deposits the key battleground.",
+    "keyTrends": ["Deposit war - banks competing hard for CASA & term deposits", "Strong retail & unsecured credit growth (with RBI caution)", "Asset quality at multi-year highs (low GNPAs)", "Rapid digital / UPI adoption & fintech partnerships", "RBI tightening on unsecured lending & NBFC exposures"]
+  }
+}

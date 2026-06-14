@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramit's Consulting Cortex — Industry Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🧭 Ramit's Consulting Cortex</div>
+    <nav class="tabs">
+      <span class="tab active">Industry Explorer</span>
+      <span class="tab disabled" title="Coming soon">Compare</span>
+      <span class="tab disabled" title="Coming soon">Tools</span>
+      <span class="tab disabled" title="Coming soon">Cases</span>
+      <span class="tab disabled l4" title="Live AI chat — Phase 2">💬 Ask (soon)</span>
+    </nav>
+    <button id="themeToggle" class="theme-btn" title="Toggle dark mode">🌙</button>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <input id="filter" class="filter" type="text" placeholder="🔎 Filter industries…" />
+      <div id="industryList" class="industry-list"></div>
+    </aside>
+
+    <section id="content" class="content">
+      <div class="placeholder">← Select an industry to explore its primer.</div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

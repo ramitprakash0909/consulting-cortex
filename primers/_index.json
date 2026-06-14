@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0",
+  "lastUpdated": "2026-06-14",
+  "note": "Master taxonomy of industries. status: 'filled' = primer complete, 'pending' = stub to build.",
+  "sectors": [
+    {
+      "sector": "TMT",
+      "industries": [
+        { "slug": "telecom", "name": "Telecom", "status": "filled" },
+        { "slug": "software-saas", "name": "Software / SaaS", "status": "filled" },
+        { "slug": "internet-ecommerce", "name": "Internet & E-commerce", "status": "filled" },
+        { "slug": "media-entertainment", "name": "Media & Entertainment", "status": "filled" }
+      ]
+    },
+    {
+      "sector": "Financial Services",
+      "industries": [
+        { "slug": "banking", "name": "Banking", "status": "filled" },
+        { "slug": "insurance", "name": "Insurance", "status": "filled" },
+        { "slug": "fintech-payments", "name": "Fintech & Payments", "status": "filled" },
+        { "slug": "asset-management", "name": "Asset Management", "status": "filled" }
+      ]
+    },
+    {
+      "sector": "Consumer",
+      "industries": [
+        { "slug": "fmcg-cpg", "name": "FMCG / CPG", "status": "filled" },
+        { "slug": "retail", "name": "Retail", "status": "filled" },
+        { "slug": "apparel-luxury", "name": "Apparel & Luxury", "status": "filled" },
+        { "slug": "consumer-durables", "name": "Consumer Durables", "status": "filled" }
+      ]
+    },
+    {
+      "sector": "Healthcare",
+      "industries": [
+        { "slug": "pharma", "name": "Pharma", "status": "filled" },
+        { "slug": "hospitals-providers", "name": "Hospitals & Providers", "status": "filled" },
+        { "slug": "medical-devices", "name": "Medical Devices", "status": "filled" }
+      ]
+    },
+    {
+      "sector": "Industrials",
+      "industries": [
+        { "slug": "automotive", "name": "Automotive", "status": "filled" },
+        { "slug": "manufacturing", "name": "Manufacturing", "status": "filled" },
+        { "slug": "logistics-supply-chain", "name": "Logistics & Supply Chain", "status": "filled" }
+      ]
+    },
+    {
+      "sector": "Energy & Resources",
+      "industries": [
+        { "slug": "oil-gas", "name": "Oil & Gas", "status": "filled" },
+        { "slug": "power-utilities", "name": "Power & Utilities", "status": "filled" },
+        { "slug": "renewables", "name": "Renewables", "status": "filled" },
+        { "slug": "metals-mining", "name": "Metals & Mining", "status": "filled" }
+      ]
+    },
+    {
+      "sector": "Services & Infra",
+      "industries": [
+        { "slug": "airlines-travel", "name": "Airlines & Travel", "status": "filled" },
+        { "slug": "hospitality", "name": "Hospitality", "status": "filled" },
+        { "slug": "real-estate", "name": "Real Estate", "status": "filled" },
+        { "slug": "construction", "name": "Construction", "status": "filled" }
+      ]
+    }
+  ]
+}

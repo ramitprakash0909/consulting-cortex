@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "slug": "telecom",
+    "industry": "Telecom",
+    "sector": "TMT",
+    "subSegments": ["Wireless / Mobile", "Fixed Broadband", "Enterprise / B2B", "Towers & Infrastructure"],
+    "lastUpdated": "2026-06-14",
+    "perishableFields": ["aiPenetration", "benchmarks", "indiaLandscape", "currentState"]
+  },
+
+  "essence": [
+    "An asset-heavy, high-fixed-cost business: build the network once, then every extra subscriber is almost pure margin - scale wins.",
+    "Spectrum is a scarce, government-controlled input that can make or break the economics.",
+    "The product is commoditising (voice/SMS dead, data cheap) - the game is moving 'up the stack' to digital services.",
+    "It's a 3-4 player oligopoly where one price move by the leader can reset the entire market overnight.",
+    "The two numbers that matter most: ARPU (revenue per user) and churn (users lost)."
+  ],
+
+  "definition": {
+    "oneLiner": "Businesses that build and run networks to carry voice and data, selling connectivity to consumers and enterprises.",
+    "jobToBeDone": "Keep people and machines connected - reliable, fast, always-on access to communication and the internet."
+  },
+
+  "valueChain": {
+    "stages": [
+      "Spectrum & licences (from government)",
+      "Network build (towers, fibre, equipment)",
+      "Network operations (run & maintain)",
+      "Service packaging (plans, bundles)",
+      "Distribution & sales (retail, digital, channel)",
+      "Customer ownership & care (billing, support, retention)"
+    ],
+    "profitPools": "Profit concentrates where scale + customer ownership sit - operators with the most subscribers. Towers are steadier but lower-margin; devices/content are thin or loss-leaders.",
+    "powerShift": "Value is migrating from 'minutes & messages' (commoditised) -> data -> digital services bundled on top (content, fintech, enterprise cloud)."
+  },
+
+  "businessModels": {
+    "primaryArchetypes": ["Subscription / recurring", "Asset-based (heavy network capex)"],
+    "variants": [
+      "Prepaid (mass-market, pay-as-you-go) vs Postpaid (premium, billed monthly)",
+      "Wholesale / infrastructure (lease towers & spectrum to others)",
+      "Bundled digital (telecom + content + payments ecosystem)"
+    ]
+  },
+
+  "unitEconomics": {
+    "unitOfRevenue": "Revenue per subscriber per month (ARPU)",
+    "revenueDrivers": "Subscribers x ARPU. ARPU rises via tariff hikes, data upsell, postpaid mix, and bundles.",
+    "keyKPIs": [
+      "ARPU - average revenue per user",
+      "Churn - % of subscribers lost per period",
+      "Subscriber base & net adds",
+      "Data usage per user (GB/month)",
+      "Capex / sales - network investment intensity",
+      "Tower tenancy ratio (for infra players)"
+    ]
+  },
+
+  "costStructure": {
+    "shape": "Very high fixed cost (network, spectrum, capex), low marginal cost per extra user -> big operating leverage.",
+    "majorPools": ["Network ops & maintenance", "Spectrum & licence fees", "Capex (towers, fibre, 5G)", "Sales & marketing", "Regulatory levies & interconnect"],
+    "leverage": "Once the network is built, each new subscriber is almost pure margin - so scale and capacity utilisation are everything."
+  },
+
+  "competitionAndMoats": {
+    "basisOfCompetition": ["Network quality & coverage", "Price / tariffs", "Brand & service", "Bundled ecosystem"],
+    "moats": [
+      "Spectrum (scarce, licensed - a hard barrier)",
+      "Scale economics (high fixed cost favours big players)",
+      "Capital intensity (deters new entrants)",
+      "Switching costs (weakened by number portability)"
+    ],
+    "concentration": "Consolidates toward a 3-4 player oligopoly."
+  },
+
+  "structuralForces": {
+    "regulation": "Heavy - spectrum auctions, licence fees, pricing oversight, security rules. Often the biggest swing factor.",
+    "cyclicality": "Capex-cyclical around tech generations (3G->4G->5G): big investment waves, then harvest.",
+    "substitution": "OTT apps (WhatsApp etc.) cannibalised voice & SMS; telcos risk becoming 'dumb pipes'.",
+    "supplierBuyerPower": "Few equipment vendors (Ericsson, Nokia, Huawei, Samsung) hold some power; governments control spectrum (huge power)."
+  },
+
+  "aiPenetration": {
+    "maturity": "Medium - telcos are active adopters in networks & customer ops, still early on monetisation.",
+    "keyUseCases": [
+      "Network optimisation & predictive maintenance (cut downtime, capex efficiency)",
+      "Churn prediction & retention targeting",
+      "AI customer service (chat/voice bots) - a large cost pool",
+      "Fraud & SIM-box detection",
+      "Capex / rollout planning & spectrum optimisation",
+      "Personalised plans & next-best-offer"
+    ],
+    "valueChainImpact": "Biggest near-term value in network ops (capex/opex) and customer care (largest headcount cost). Longer-term: telcos as AI/edge-compute infrastructure providers.",
+    "opportunities": ["Sell AI/cloud/edge to enterprises", "Lower cost-to-serve", "Up-stack beyond the dumb pipe"],
+    "threatsDisruption": ["AI-native OTT competitors", "Commoditisation if telco stays just the pipe"],
+    "note": "FAST-MOVING - refresh frequently."
+  },
+
+  "benchmarks": {
+    "ranges": [
+      "EBITDA margin: ~30-40% (mature operators)",
+      "ARPU (India): ~Rs 180-250/month; (developed markets): far higher",
+      "Churn: ~1-2%/month prepaid; lower for postpaid",
+      "Capex/sales: ~15-25% (higher during rollout years)",
+      "Net debt / EBITDA: ~2-4x typical, higher post-spectrum auctions",
+      "Leader subscriber share in a consolidated market: ~35-40%"
+    ],
+    "note": "DIRECTIONAL - rules of thumb, not audited figures. Verify before quoting."
+  },
+
+  "valueLevers": [
+    "Raise ARPU (tariff hikes, data upsell, postpaid mix, bundles)",
+    "Reduce churn / improve retention",
+    "Capex & network efficiency (ROI per site, infra sharing)",
+    "Reduce cost-to-serve (digital channels, AI care)",
+    "Up-stack monetisation (enterprise, content, fintech, edge/cloud)",
+    "Consolidation / M&A for scale economics"
+  ],
+
+  "keyTerms": {
+    "ARPU": "Average Revenue Per User - monthly revenue / subscribers; the core monetisation metric.",
+    "Churn": "Share of subscribers who leave in a period; high churn erodes the base.",
+    "MNP": "Mobile Number Portability - keep your number when switching operators; lowered switching costs.",
+    "Spectrum": "Licensed radio frequencies needed to run a network; bought at government auctions.",
+    "AGR": "Adjusted Gross Revenue - the base on which Indian telcos owe government dues; a major legacy liability.",
+    "OTT": "Over-The-Top apps (WhatsApp, YouTube) that ride on the telco's network and bypass its services.",
+    "5G SA": "5G Standalone - a full 5G core network (vs riding on 4G), enabling advanced low-latency use cases.",
+    "Tenancy ratio": "Average tenants per tower; higher = better tower economics."
+  },
+
+  "commonCaseTypes": [
+    "ARPU improvement / tariff strategy",
+    "Churn reduction & retention",
+    "Capex efficiency & 5G business case",
+    "Spectrum auction strategy (what to bid)",
+    "Market entry / consolidation & M&A",
+    "Monetising digital services (move up the stack)",
+    "Cost transformation in a price war"
+  ],
+
+  "firstLookDiagnostics": {
+    "questionsToAskFirst": [
+      "Is the problem price (ARPU) or volume (subscribers)?",
+      "Where are they in the capex cycle - investing or harvesting?",
+      "Prepaid vs postpaid mix, and the trend?",
+      "What's churn, and what's driving it?",
+      "How does network quality rank vs competitors?",
+      "Any regulatory / spectrum event on the horizon?"
+    ],
+    "metricsToPullFirst": ["ARPU trend", "Churn", "Net subscriber adds", "Capex/sales", "Net debt / EBITDA"],
+    "rookieTraps": [
+      "Chasing subscriber growth while ARPU/quality erodes",
+      "Ignoring the spectrum/capex cycle when judging margins",
+      "Treating telecom as just a pipe and missing the ecosystem play"
+    ]
+  },
+
+  "whatsUniqueHere": "Telecom is where natural-monopoly economics meets brutal price competition. Spectrum is a government-controlled input that can make or break the business, and a single tariff move by the price leader can reset the whole market overnight.",
+
+  "indiaLandscape": {
+    "marketStructure": "3 private telcos + state-owned BSNL/MTNL; consolidated from ~12 players after the post-2016 price war.",
+    "majorPlayers": ["Reliance Jio", "Bharti Airtel", "Vodafone Idea (Vi)", "BSNL"],
+    "regulatorsAndPolicy": ["TRAI (tariffs/regulation)", "DoT (licences/spectrum)", "Spectrum auctions", "Telecom Act 2023"],
+    "policyTailwinds": ["Digital India", "BharatNet rural fibre", "PLI for telecom gear", "Make-in-India 5G stack"],
+    "demandDrivers": ["World's cheapest data + huge youth base", "Rural data adoption", "JAM stack / UPI digital boom", "Rising smartphone penetration"],
+    "structuralChallenges": ["AGR dues legacy burden", "Among the lowest ARPU globally", "Rural economics hard to serve profitably"],
+    "note": "Semi-perishable - players & policy specifics refresh periodically."
+  },
+
+  "crossIndustryLinks": {
+    "similarTo": ["Utilities - asset-heavy, regulated, scale-driven", "Airlines - high fixed cost, perishable capacity, price wars"],
+    "relatedPrimers": ["media-entertainment", "internet-ecommerce", "power-utilities"],
+    "relevantFrameworks": ["unit-economics", "porters-five-forces", "cost-restructuring"]
+  },
+
+  "currentState": {
+    "asOf": "2026-06-14",
+    "note": "PERISHABLE - refresh via research before quoting. Figures approximate.",
+    "marketStructure": "India: 3 private players + BSNL. Jio (~470M subs, #1), Airtel (~390M, higher ARPU), Vi (distant 3rd, struggling).",
+    "keyTrends": ["5G standalone rollout", "Tariff hikes lifting ARPU", "Possible Jio IPO", "Vi's continued share loss"]
+  }
+}
