@@ -76,6 +76,7 @@ function toggleTheme() {
 
 /* ---- selecting an industry: L3 load its primer file ---- */
 async function selectIndustry(ind) {
+  setActiveTab("explorer"); // clicking an industry returns to the Explorer view
   const content = document.getElementById("content");
   if (ind.status !== "filled") {
     content.innerHTML = `<div class="placeholder">📋 The <b>${ind.name}</b> primer is coming soon.</div>`;
@@ -269,6 +270,8 @@ function renderPrimer(p) {
   document.getElementById("content").innerHTML = html;
   wireCards();       // L1 collapse/expand
   wireCalculator();  // L2 live math
+  window.__cortexCurrent = p;                                            // for "Save to Cases"
+  window.__explorerHTML = document.getElementById("content").innerHTML;  // to restore after viewing Cases
 }
 
 /* ---- L1: make every card collapsible ---- */
@@ -279,3 +282,75 @@ function wireCards() {
 }
 
 init();
+
+/* ===== Phase 1: Cases (Supabase) ===== */
+function setActiveTab(which) {
+  document.querySelectorAll(".tabs .tab").forEach((t) => t.classList.remove("active"));
+  const el = document.getElementById(which === "cases" ? "tabCases" : "tabExplorer");
+  if (el) el.classList.add("active");
+}
+
+function showExplorer() {
+  setActiveTab("explorer");
+  document.getElementById("content").innerHTML =
+    window.__explorerHTML || `<div class="placeholder">← Select an industry to explore its primer.</div>`;
+}
+
+async function showCases() {
+  setActiveTab("cases");
+  const content = document.getElementById("content");
+  if (!window.cortexDB || !cortexDB.enabled()) {
+    content.innerHTML = `<div class="error">Cases need Supabase config (web/config.js) + an internet connection.</div>`;
+    return;
+  }
+  content.innerHTML = `<div class="placeholder">Loading your cases…</div>`;
+  try {
+    const rows = await cortexDB.listCases();
+    if (!rows.length) {
+      content.innerHTML = `<div class="placeholder">No saved cases yet. Open an industry and hit 💾 Save.</div>`;
+      return;
+    }
+    content.innerHTML =
+      `<div class="primer-header"><h1>🗂 Cases</h1><div class="sub">${rows.length} saved</div></div>` +
+      rows.map((r) =>
+        `<div class="card open"><button class="card-head">${r.title || r.industry_slug || "Case"}` +
+        `<span class="chev" style="font-size:12px;color:var(--muted)">${(r.created_at || "").slice(0, 10)}</span></button>` +
+        `<div class="card-body"><p>${r.question || r.type || ""}</p>` +
+        `<button class="case-del" data-id="${r.id}" style="border:1px solid var(--line);background:none;color:#c0392b;border-radius:8px;padding:4px 10px;cursor:pointer">Delete</button></div></div>`
+      ).join("");
+    content.querySelectorAll(".case-del").forEach((b) =>
+      b.addEventListener("click", async () => {
+        try { await cortexDB.deleteCase(b.dataset.id); showCases(); }
+        catch (e) { alert("Delete failed: " + e.message); }
+      })
+    );
+    wireCards();
+  } catch (e) {
+    content.innerHTML = `<div class="error">Couldn't load cases: ${e.message}</div>`;
+  }
+}
+
+async function saveCurrentToCases() {
+  const p = window.__cortexCurrent;
+  if (!p) { alert("Open an industry first, then hit Save."); return; }
+  if (!window.cortexDB || !cortexDB.enabled()) { alert("Cases need Supabase config + internet."); return; }
+  try {
+    await cortexDB.saveCase({
+      type: "bookmark",
+      title: p.meta.industry,
+      industry_slug: p.meta.slug,
+      question: "Saved primer: " + p.meta.industry,
+      content: { essence: p.essence }
+    });
+    alert('Saved "' + p.meta.industry + '" to Cases.');
+  } catch (e) { alert("Save failed: " + e.message); }
+}
+
+(function wireDynamic() {
+  const tCases = document.getElementById("tabCases");
+  const tExpl = document.getElementById("tabExplorer");
+  const sBtn = document.getElementById("saveBtn");
+  if (tCases) tCases.addEventListener("click", showCases);
+  if (tExpl) tExpl.addEventListener("click", showExplorer);
+  if (sBtn) sBtn.addEventListener("click", saveCurrentToCases);
+})();

@@ -10,12 +10,13 @@
   <header class="topbar">
     <div class="brand">🧭 Ramit's Consulting Cortex</div>
     <nav class="tabs">
-      <span class="tab active">Industry Explorer</span>
+      <span class="tab active" id="tabExplorer">Industry Explorer</span>
       <span class="tab disabled" title="Coming soon">Compare</span>
       <span class="tab disabled" title="Coming soon">Tools</span>
-      <span class="tab disabled" title="Coming soon">Cases</span>
+      <span class="tab" id="tabCases" title="Your saved cases (Supabase)">Cases</span>
       <span class="tab disabled l4" title="Live AI chat — Phase 2">💬 Ask (soon)</span>
     </nav>
+    <button id="saveBtn" class="theme-btn" title="Save the open industry to Cases">💾 Save</button>
     <button id="themeToggle" class="theme-btn" title="Toggle dark mode">🌙</button>
   </header>
 
@@ -30,6 +31,9 @@
     </section>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="db.js"></script>
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
