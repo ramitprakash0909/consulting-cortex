@@ -286,7 +286,8 @@ init();
 /* ===== Phase 1: Cases (Supabase) ===== */
 function setActiveTab(which) {
   document.querySelectorAll(".tabs .tab").forEach((t) => t.classList.remove("active"));
-  const el = document.getElementById(which === "cases" ? "tabCases" : "tabExplorer");
+  const id = which === "cases" ? "tabCases" : which === "ask" ? "tabAsk" : "tabExplorer";
+  const el = document.getElementById(id);
   if (el) el.classList.add("active");
 }
 
@@ -349,8 +350,108 @@ async function saveCurrentToCases() {
 (function wireDynamic() {
   const tCases = document.getElementById("tabCases");
   const tExpl = document.getElementById("tabExplorer");
+  const tAsk = document.getElementById("tabAsk");
   const sBtn = document.getElementById("saveBtn");
   if (tCases) tCases.addEventListener("click", showCases);
   if (tExpl) tExpl.addEventListener("click", showExplorer);
+  if (tAsk) tAsk.addEventListener("click", showAsk);
   if (sBtn) sBtn.addEventListener("click", saveCurrentToCases);
 })();
+
+/* ===== Phase 2: Ask the Consultant (Level 4 — live, grounded AI) ===== */
+function askEndpoint() {
+  const cfg = window.CORTEX_CONFIG || {};
+  return cfg.SUPABASE_URL ? cfg.SUPABASE_URL.replace(/\/$/, "") + "/functions/v1/ask-consultant" : null;
+}
+
+function industryOptions() {
+  const data = indexData || window.CORTEX_INDEX;
+  if (!data) return "";
+  const opts = [];
+  data.sectors.forEach((sec) =>
+    sec.industries.forEach((ind) => {
+      if (ind.status === "filled") opts.push(`<option value="${ind.slug}">${ind.name}</option>`);
+    })
+  );
+  return opts.join("");
+}
+
+/* tiny markdown-ish renderer: escape, **bold**, blank-line paragraphs, single newlines */
+function mdLite(t) {
+  if (!t) return "";
+  const esc = String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return "<p>" + esc
+    .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
+    .replace(/\n{2,}/g, "</p><p>")
+    .replace(/\n/g, "<br>") + "</p>";
+}
+
+function showAsk() {
+  setActiveTab("ask");
+  const content = document.getElementById("content");
+  const cfg = window.CORTEX_CONFIG || {};
+  if (!askEndpoint() || !cfg.SUPABASE_ANON_KEY) {
+    content.innerHTML = `<div class="error">Ask needs Supabase config (web/config.js) + an internet connection.</div>`;
+    return;
+  }
+  content.innerHTML = `
+    <div class="primer-header">
+      <h1>💬 Ask the Consultant</h1>
+      <div class="sub">Pick an industry, ask anything — answered MBB-style, grounded in that primer.</div>
+    </div>
+    <div class="ask-form" style="display:flex;flex-direction:column;gap:12px;max-width:780px">
+      <label>Industry
+        <select id="askIndustry" class="filter" style="width:100%">${industryOptions()}</select>
+      </label>
+      <label>Your question
+        <textarea id="askQ" class="filter" rows="3" style="width:100%;resize:vertical"
+          placeholder="e.g. What are the biggest margin levers? How should a new entrant compete?"></textarea>
+      </label>
+      <button id="askBtn" class="theme-btn" style="align-self:flex-start;padding:8px 20px">Ask →</button>
+    </div>
+    <div id="askAnswer" style="margin-top:18px"></div>`;
+  const btn = document.getElementById("askBtn");
+  btn.addEventListener("click", runAsk);
+  document.getElementById("askQ").addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") runAsk(); // Ctrl/Cmd+Enter to send
+  });
+}
+
+async function runAsk() {
+  const cfg = window.CORTEX_CONFIG || {};
+  const industry = document.getElementById("askIndustry").value;
+  const question = document.getElementById("askQ").value.trim();
+  const out = document.getElementById("askAnswer");
+  const btn = document.getElementById("askBtn");
+  if (!question) { out.innerHTML = `<div class="error">Type a question first.</div>`; return; }
+  out.innerHTML = `<div class="placeholder">🧠 Thinking… grounding in the <b>${industry}</b> primer…</div>`;
+  if (btn) btn.disabled = true;
+  try {
+    const res = await fetch(askEndpoint(), {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": cfg.SUPABASE_ANON_KEY,
+        "Authorization": "Bearer " + cfg.SUPABASE_ANON_KEY,
+      },
+      body: JSON.stringify({ question, industry }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || data.error) {
+      out.innerHTML = `<div class="error">${(data && data.error) || ("HTTP " + res.status)}</div>`;
+    } else {
+      out.innerHTML = card(
+        "🧠 Answer",
+        `<div class="ask-answer">${mdLite(data.answer)}</div>` +
+        `<div class="note" style="margin-top:10px">${data.disclaimer || ""}</div>` +
+        `<div class="sub" style="margin-top:6px">Grounded in: ${chips(data.usedPrimers || [industry])}</div>`,
+        { open: true }
+      );
+      wireCards();
+    }
+  } catch (e) {
+    out.innerHTML = `<div class="error">Request failed: ${e.message}</div>`;
+  } finally {
+    if (btn) btn.disabled = false;
+  }
+}
